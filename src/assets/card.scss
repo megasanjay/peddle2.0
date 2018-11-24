@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+$bp-sm: 768px;
+$bp-md: 1024px;
+
+$black: #000;
+$orange: #007bff;
+$gray: #999;
+$white: #fff;
+
+$main-font: 'Montserrat', sans-serif;
+
+$transition-speed: .3s;
+
+#applet {
+  max-width: 966px;
+  margin: 0 auto;
+}
+
+.card-form {
+  box-sizing: border-box;
+  padding: 16px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: $white;
+  box-shadow: 4px 4px 16px rgba($black, .8);
+
+  @media (min-width: $bp-sm) {
+    margin-top: 64px;
+  }
+  @media (min-width: $bp-md) {
+    display: inline-block;
+    margin: 64px 0 0;
+  }
+
+  &__title {
+    text-align: center;
+    color: $black;
+  }
+  &__submit {
+    padding: 8px 16px;
+    border: 1px solid $orange;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 2px;
+    color: $white;
+    background-color: $orange;
+    transition: color $transition-speed,
+                background $transition-speed,
+                box-shadow $transition-speed;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      color: $orange;
+      background-color: $white;
+      box-shadow: 0 0 8px $orange;
+    }
+  }
+}
+
+.card-form-field {
+  margin: 8px 0 16px;
+
+  &__label {
+    display: block;
+    margin-bottom: 4px;
+
+    &_inline {
+      display: inline-block;
+      margin-bottom: 0;
+      margin-right: 4px;
+    }
+  }
+  &__input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 4px 8px;
+    font-size: 18px;
+    font-family: $main-font;
+    border-radius: 2px;
+    border: 1px solid $gray;
+    transition: box-shadow $transition-speed;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 8px $orange;
+    }
+
+    &_cvc {
+      width: 54px;
+    }
+  }
+  &__select {
+    box-sizing: border-box;
+    padding: 4px 8px;
+    font-size: 18px;
+    font-family: $main-font;
+    background-color: $white;
+    border-radius: 2px;
+    border: 1px solid $gray;
+    transition: box-shadow $transition-speed;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 8px $orange;
+    }
+  }
+}
+
+.card-preview {
+  position: relative;
+  display: none;
+  vertical-align: top;
+  margin-top: calc(64px + 53px);
+  margin-left: 32px;
+  user-select: none;
+
+  @media (min-width: $bp-md) {
+    display: inline-block;
+  }
+
+  &__side {
+    position: relative;
+    width: 400px;
+    height: 252px;
+    border-radius: 16px;
+    background-color: $white;
+    box-shadow: 2px 2px 2px rgba($black, .5);
+
+    &_front {
+      background-color: #009E8E;
+      box-shadow: 2px 2px 6px rgba($black, .6);
+    }
+    &_back {
+      position: absolute;
+      background-color: $white;
+      z-index: -1;
+      top: 32px;
+      left: 128px;
+      background-image: linear-gradient(to bottom,
+          $white 24%, $black 24%, $black 40%, $white 40%);
+    }
+  }
+  &__label {
+    font-size: 12px;
+    color: $gray;
+    text-transform: uppercase;
+
+    &_white {
+      color: $white;
+    }
+  }
+  &__cvc {
+    position: absolute;
+    top: 50%;
+    left: 280px;
+  }
+  &__number {
+    position: absolute;
+    top: 32%;
+    left: 16px;
+    font-size: 34px;
+  }
+  &__owner {
+    position: absolute;
+    left: 16px;
+    bottom: 40px;
+  }
+  &__expiration {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+  }
+  &__etched-text {
+    text-shadow: 1px 1px 4px #000;
+    color: #fff;
+  }
+}
